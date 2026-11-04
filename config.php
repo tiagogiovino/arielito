@@ -18,6 +18,8 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $username, $password, $options);
+    // index.php, docentes.php y preceptores.php usan $conn; probar_conexion.php usa $pdo.
+    $conn = $pdo;
 } catch (PDOException $e) {
 
     error_log('[SIGEM PDO] ' . $e->getMessage());
